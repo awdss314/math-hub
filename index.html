@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Math Hub</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --panel:rgba(255,255,255,.08);
+      --panel2:rgba(255,255,255,.12);
+      --text:#e2e8f0;
+      --muted:#94a3b8;
+      --accent:#38bdf8;
+      --accent2:#a78bfa;
+      --good:#34d399;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(56,189,248,.22), transparent 55%),
+        radial-gradient(900px 500px at 85% 20%, rgba(167,139,250,.22), transparent 55%),
+        radial-gradient(800px 500px at 40% 90%, rgba(52,211,153,.18), transparent 55%),
+        linear-gradient(180deg, #0b1022, var(--bg));
+    }
+
+    .wrap{width:min(980px, 92vw); padding:28px;}
+    header{
+      padding:24px 22px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, var(--panel2), var(--panel));
+      border-radius:20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    h1{
+      margin:0 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing:.3px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      line-height:1.45;
+      max-width:60ch;
+    }
+
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.22);
+    }
+    @media (max-width:720px){
+      .card{grid-column: span 12;}
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .btnrow{display:flex; flex-wrap:wrap; gap:10px;}
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      text-decoration:none;
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+      cursor:pointer;
+      font-weight:600;
+    }
+    a.btn:hover{
+      transform: translateY(-1px);
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
+    }
+    a.btn.primary{
+      background:linear-gradient(90deg, rgba(56,189,248,.22), rgba(167,139,250,.22));
+      border-color:rgba(56,189,248,.35);
+    }
+    a.btn.good{
+      background:linear-gradient(90deg, rgba(52,211,153,.22), rgba(56,189,248,.16));
+      border-color:rgba(52,211,153,.35);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--muted);
+      font-size:12px;
+      margin-top:10px;
+    }
+    footer{
+      margin-top:16px;
+      color:rgba(226,232,240,.7);
+      font-size:12px;
+      text-align:center;
+    }
+    .eq{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      color:rgba(226,232,240,.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>📐 High School Math Hub</h1>
+      <p class="sub">
+        Quick launchpad for calculators, translation, and course access.
+        <span class="eq">y = mx + b</span> • <span class="eq">sin²θ + cos²θ = 1</span> • <span class="eq">a² + b² = c²</span>
+      </p>
+      <div class="pill">Tip: Open tools in a new tab so your hub stays open.</div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Desmos</h2>
+        <p>Graph, test transformations, and check your reasoning fast.</p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://www.desmos.com/calculator" target="_blank" rel="noopener">
+            📈 Desmos Graphing Calculator
+          </a>
+          <a class="btn" href="https://www.desmos.com/scientific" target="_blank" rel="noopener">
+            🧮 Desmos Scientific Calculator
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Translate</h2>
+        <p>Translate directions, vocabulary, or explanations instantly.</p>
+        <div class="btnrow">
+          <a class="btn" href="https://translate.google.com/" target="_blank" rel="noopener">
+            🌐 Google Translate
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>D2L (HWDSB eLearning Ontario)</h2>
+        <p>Access course content, quizzes, assignments, and messages.</p>
+        <div class="btnrow">
+          <a class="btn good" href="http://hwdsb.elearningontario.ca/" target="_blank" rel="noopener">
+            🎓 Open D2L
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Warm-Up</h2>
+        <p>Daily quick brain-starter:</p>
+        <p class="eq">Solve: 2(x − 3) + 5 = 19</p>
+        <p class="eq">Convert: 150° to radians</p>
+        <p class="eq">Find: vertex of y = (x − 4)² − 7</p>
+      </div>
+    </section>
+
+    <footer>
+      Made for classroom use • Links open in a new tab
+    </footer>
+  </div>
+</body>
+</html>
